@@ -24,8 +24,8 @@ ul{
 }
 
 .container{
-    width: 80%;
-    height: 80%;
+    width: 85%;
+    height: 90%;
     background: white;
     display: flex;
 }
@@ -176,6 +176,7 @@ ul{
 
 .contact-list li{
     border-bottom: 1px solid whitesmoke;
+    height: 65px;
     display: flex;
     align-items: center;
     justify-content: space-between;
