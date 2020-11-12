@@ -55,8 +55,8 @@
 }
 
 .user-header img{
-    height: 80%;
-    width: 20%;
+    height: 45px;
+    width: 45px;
     margin-left: 5px;
     border-radius: 50%;
     object-fit: cover;
@@ -87,8 +87,8 @@
 }
 
 .notification-bell{
-    height: 80%;
-    width: 12%;
+    height: 45px;
+    width: 45px;
     margin-left: 5px;
     display: flex;
     align-items: center;
