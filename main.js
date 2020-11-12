@@ -48,7 +48,7 @@ var app = new Vue(
                     ],
                 },
                 {
-                    name: 'Samuele',
+                    name: 'Luisa',
                     avatar: '_4',
                     visible: true,
                     messages: [
@@ -70,7 +70,7 @@ var app = new Vue(
                     ],
                 },
                 {
-                    name: 'Luisa',
+                    name: 'Samuele',
                     avatar: '_5',
                     visible: true,
                     messages: [
@@ -104,7 +104,7 @@ var app = new Vue(
                     ],
                 },
                 {
-                    name: 'Mirco',
+                    name: 'Valeria',
                     avatar: '_7',
                     visible: true,
                     messages: [

@@ -56,8 +56,16 @@
                                 <div class="contact-list">
                                     <ul>
                                         <li v-for="(contact, index) in contacts">
-                                            <img :src="getImgUrl(contact)"  alt="">
-                                            {{contact.name}}
+                                            <div class="contact-left">
+                                                <img :src="getImgUrl(contact)"  alt="">
+                                                <div class="contact-name-and-status">
+                                                    <span>{{contact.name}}</span>
+                                                    <span>Status</span>
+                                                </div>
+                                            </div>
+                                            <div class="contact-right">
+                                                <span>15:27</span>
+                                            </div>
                                         </li>
                                     </ul>
                                 </div>

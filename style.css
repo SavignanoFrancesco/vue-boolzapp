@@ -153,10 +153,32 @@ ul{
     outline: none;
 }
 
+.contact-list li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .contact-list img{
     height: 45px;
     width: 45px;
     margin-left: 5px;
     border-radius: 50%;
     object-fit: cover;
+}
+
+.contact-left{
+    display: flex;
+    align-items: center;
+}
+
+.contact-right{
+    display: flex;
+    align-items: center;
+}
+
+.contact-name-and-status{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
