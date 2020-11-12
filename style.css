@@ -48,7 +48,7 @@ ul{
     display: flex;
     flex-grow: 10;
     flex-direction: column;
-    background: blue;
+    /* background: blue; */
 }
 
 .user-header{
@@ -240,7 +240,7 @@ ul{
 .chat-avatar img{
     height: 45px;
     width: 45px;
-    margin-left: 5px;
+    margin: 5px;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -254,4 +254,50 @@ ul{
 .contact-name-and-lastacces span:last-of-type{
     font-size: 12px;
     color: rgba(0,0,0,0.4);
+}
+
+.chat-messages{
+    overflow-y: scroll;
+    height: 80%;
+    width: 100%;
+    background-image:url('chatBackground/chatbackground.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-messages > div:first-of-type{
+    margin-top: 40px;
+}
+
+.message{
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.message span{
+    padding: 5px;
+}
+
+.message .hour{
+    align-self: flex-end;
+    font-size: 10px;
+}
+
+.message.sent{
+    background: lightgreen;
+    align-self: flex-end;
+    margin-right: 10%;
+}
+
+.message.received{
+    background: white;
+    align-self: flex-start;
+    margin-left: 10%;
 }
