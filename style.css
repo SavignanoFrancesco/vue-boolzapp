@@ -212,3 +212,46 @@ ul{
     font-size: 12px;
     color: rgb(0,0,0,0.4);
 }
+
+.chat-header{
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    background: #ededed;
+}
+
+.chat-avatar{
+    display: flex;
+    align-items: center;
+}
+
+.chat-buttons{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.chat-buttons i{
+    font-size: 20px;
+    padding: 0 4px;
+    color:lightgrey;
+}
+
+.chat-avatar img{
+    height: 45px;
+    width: 45px;
+    margin-left: 5px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.contact-name-and-lastacces{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact-name-and-lastacces span:last-of-type{
+    font-size: 12px;
+    color: rgba(0,0,0,0.4);
+}

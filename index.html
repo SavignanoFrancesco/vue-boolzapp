@@ -55,7 +55,7 @@
 
                                 <div class="contact-list">
                                     <ul>
-                                        <li v-for="(contact, index) in contacts">
+                                        <li v-for="(contact, index) in contacts" @click="getContactIndex(contact)">
                                             <div class="contact-left">
                                                 <img :src="getImgUrl(contact)"  alt="">
                                                 <div class="contact-name-and-status">
@@ -75,7 +75,23 @@
                         </div>
 
                         <div class="chat-box">
+                            <header class="chat-header">
+                                <div class="chat-avatar">
+                                    <div class="contact-left">
+                                        <!-- <img :src="getImgUrl()"  alt=""> -->
+                                        <div class="contact-name-and-lastacces">
+                                            <span>name</span>
+                                            <span>last access</span>
+                                        </div>
+                                    </div>
+                                </div>
 
+                                <div class="chat-buttons">
+                                    <i class="fas fa-search"></i>
+                                    <i class="fas fa-paperclip"></i>
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </div>
+                            </header>
                         </div>
 
                     </div>

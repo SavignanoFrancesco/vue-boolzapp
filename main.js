@@ -159,8 +159,13 @@ var app = new Vue(
         methods: {
             getImgUrl(contact) {
                 var imgUrl = 'avatars/avatar' + contact.avatar + ".png";
-                console.log(imgUrl);
+                // console.log(imgUrl);
                 return imgUrl;
+            },
+            getContactIndex(contact) {
+                var contactIndex = this.contacts.indexOf(contact);
+                console.log(contactIndex);
+                // return contactIndex;
             }
         }
     }
