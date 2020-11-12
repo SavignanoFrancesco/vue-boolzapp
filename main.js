@@ -157,7 +157,11 @@ var app = new Vue(
             ]
         },
         methods: {
-
+            getImgUrl(contact) {
+                var imgUrl = 'avatars/avatar' + contact.avatar + ".png";
+                console.log(imgUrl);
+                return imgUrl;
+            }
         }
     }
 );
