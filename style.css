@@ -8,6 +8,10 @@ ul{
     list-style-type: none;
 }
 
+i{
+    cursor: pointer;
+}
+
 .external-container{
     width: 100%;
     height: 100vh;
@@ -56,6 +60,7 @@ ul{
     display: flex;
     justify-content: space-between;
     background: #ededed;
+    border-right: 1px solid lightgrey;
 }
 
 .user-header img{
@@ -80,7 +85,7 @@ ul{
 .user-buttons i{
     font-size: 20px;
     padding: 0 4px;
-    color:lightgrey;
+    color:grey;
 }
 
 .user-notifications{
@@ -234,7 +239,7 @@ ul{
 .chat-buttons i{
     font-size: 20px;
     padding: 0 4px;
-    color:lightgrey;
+    color:grey;
 }
 
 .chat-avatar img{
@@ -300,4 +305,26 @@ ul{
     background: white;
     align-self: flex-start;
     margin-left: 10%;
+}
+
+.writemessage-box{
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f0f0f0;
+}
+
+.writemessage-box i{
+    font-size: 25px;
+    margin: 0 20px;
+    color:grey;
+}
+
+.writemessage-box input{
+    width: 85%;
+    height: 50%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
 }
