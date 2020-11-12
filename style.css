@@ -153,6 +153,10 @@ ul{
     outline: none;
 }
 
+.contact-list{
+    overflow-y: scroll;
+}
+
 .contact-list li{
     display: flex;
     align-items: center;
@@ -162,7 +166,7 @@ ul{
 .contact-list img{
     height: 45px;
     width: 45px;
-    margin-left: 5px;
+    margin: 5px;
     border-radius: 50%;
     object-fit: cover;
 }
