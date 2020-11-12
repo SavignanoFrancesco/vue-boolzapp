@@ -3,3 +3,25 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+.external-container{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, lightgreen 0%,lightgreen 20%,whitesmoke 20%,whitesmoke 100%);
+}
+
+.external-container-layer{
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    width: 80%;
+    height: 80%;
+    border: 1px solid black;
+    background: white;
+}
