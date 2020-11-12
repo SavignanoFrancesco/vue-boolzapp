@@ -22,6 +22,129 @@
 .container{
     width: 80%;
     height: 80%;
-    border: 1px solid black;
     background: white;
+    display: flex;
+}
+
+.left-box{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: red;
+}
+
+.left-box i{
+    cursor: pointer;
+}
+
+.chat-box{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-grow: 10;
+    flex-direction: column;
+    background: blue;
+}
+
+.user-header{
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    background: lightgrey;
+}
+
+.user-header img{
+    height: 80%;
+    width: 20%;
+    margin-left: 5px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-avatar{
+    display: flex;
+    align-items: center;
+}
+
+.user-buttons{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.user-buttons i{
+    font-size: 20px;
+    padding: 0 4px;
+    color: grey;
+}
+
+.user-notifications{
+    height: 10%;
+    display: flex;
+    align-items: center;
+    background: lightblue;
+}
+
+.notification-bell{
+    height: 80%;
+    width: 12%;
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 50%;
+}
+
+.notification-bell i{
+    font-size: 20px;
+    color: lightblue;
+}
+
+.notifications-text{
+    margin-left: 5px;
+}
+
+.contacts-box{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    background: whitesmoke;
+}
+
+.search-box{
+    height: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.search-icon{
+    width: 15%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: grey;
+    border-radius: 4px;
+}
+
+.search-input{
+    width: 80%;
+    height: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-radius: 4px;
+}
+
+.search-input input{
+    width: 95%;
+    height: 100%;
+    border: none;
+    outline: none;
 }
