@@ -194,19 +194,35 @@ var app = new Vue(
                 this.chosen_contact_index = contactIndex;
             },
             addMessage(){
+                
                 let date = new Date();
                 let hour = date.getHours();
                 let minutes = date.getMinutes();
+
                 let messageObj = {
                     date: '',
                     hour: hour + ':' + minutes ,
                     message: this.written_message,
                     status: 'sent',
                 };
+
                 if (this.written_message != '') {
                     this.contacts[this.chosen_contact_index].messages.push(messageObj);
+
+                    let answerObj = {
+                        date: '',
+                        hour: hour + ':' + minutes ,
+                        message:'ok',
+                        status: 'received',
+                    };
+
+                    setTimeout(() => { this.contacts[this.chosen_contact_index].messages.push(answerObj);
+                    }, 1500);
+
                 }
+
                 this.written_message = '';
+
             },
 
         },
