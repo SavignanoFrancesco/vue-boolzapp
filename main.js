@@ -203,11 +203,15 @@ var app = new Vue(
                     message: this.written_message,
                     status: 'sent',
                 };
-                this.contacts[this.chosen_contact_index].messages.push(messageObj);
-                console.log(messageObj);
+                if (this.written_message != '') {
+                    this.contacts[this.chosen_contact_index].messages.push(messageObj);
+                }
                 this.written_message = '';
             },
 
-        }
+        },
+        mounted(){
+
+        },
     }
 );
