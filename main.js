@@ -194,14 +194,17 @@ var app = new Vue(
                 this.chosen_contact_index = contactIndex;
             },
             addMessage(){
-                console.log(this.written_message);
-                var messageObj = {
+                let date = new Date();
+                let hour = date.getHours();
+                let minutes = date.getMinutes();
+                let messageObj = {
                     date: '',
-                    hour: '',
+                    hour: hour + ':' + minutes ,
                     message: this.written_message,
                     status: 'sent',
                 };
                 this.contacts[this.chosen_contact_index].messages.push(messageObj);
+                console.log(messageObj);
                 this.written_message = '';
             },
 
