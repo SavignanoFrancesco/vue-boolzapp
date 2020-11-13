@@ -9,7 +9,7 @@ ul{
 }
 
 i{
-    cursor: pointer;
+    cursor: pointer;sent
 }
 
 .external-container{
@@ -175,6 +175,7 @@ i{
 }
 
 .contact-list{
+    height: 100%;
     background: white;
     overflow-y: scroll;
 }
@@ -284,6 +285,7 @@ i{
     align-items: center;
     border-radius: 5px;
     font-size: 14px;
+    margin-top: 5px;
 }
 
 .message span{
