@@ -173,7 +173,8 @@ var app = new Vue(
                         }
                     ],
                 },
-            ]
+            ],
+            chosen_contact_index: 0,
         },
         methods: {
             getImgUrl(contact) {
@@ -181,10 +182,15 @@ var app = new Vue(
                 // console.log(imgUrl);
                 return imgUrl;
             },
+            getChosenImgUrl(chosenContact) {
+                var imgUrl = 'avatars/avatar' + chosenContact.avatar + ".png";
+                // console.log(imgUrl);
+                return imgUrl;
+            },
             getContactIndex(contact) {
                 var contactIndex = this.contacts.indexOf(contact);
                 console.log(contactIndex);
-                // return contactIndex;
+                this.chosen_contact_index = contactIndex;
             }
         }
     }

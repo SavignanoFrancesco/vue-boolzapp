@@ -78,9 +78,9 @@
                             <header class="chat-header">
                                 <div class="chat-avatar">
                                     <div class="contact-left">
-                                        <img src="avatars/avatar_2.png"  alt="">
+                                        <img :src="getChosenImgUrl(contacts[chosen_contact_index])"  alt="">
                                         <div class="contact-name-and-lastacces">
-                                            <span>{{contacts[0].name}}</span>
+                                            <span>{{contacts[chosen_contact_index].name}}</span>
                                             <span>last access</span>
                                         </div>
                                     </div>
@@ -93,7 +93,7 @@
                                 </div>
                             </header>
                             <div class="chat-messages">
-                                <div class="message" v-for="message in contacts[0].messages" :class="message.status == 'sent' ? 'sent' : 'received'">
+                                <div class="message" v-for="message in contacts[chosen_contact_index].messages" :class="message.status == 'sent' ? 'sent' : 'received'">
                                     <span>{{message.message}}</span>
                                     <span class="hour">{{message.hour.substring(0,5)}}</span>
                                 </div>
