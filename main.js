@@ -175,6 +175,7 @@ var app = new Vue(
                 },
             ],
             chosen_contact_index: 0,
+            written_message: '',
         },
         methods: {
             getImgUrl(contact) {
@@ -189,9 +190,21 @@ var app = new Vue(
             },
             getContactIndex(contact) {
                 var contactIndex = this.contacts.indexOf(contact);
-                console.log(contactIndex);
+                // console.log(contactIndex);
                 this.chosen_contact_index = contactIndex;
-            }
+            },
+            addMessage(){
+                console.log(this.written_message);
+                var messageObj = {
+                    date: '',
+                    hour: '',
+                    message: this.written_message,
+                    status: 'sent',
+                };
+                this.contacts[this.chosen_contact_index].messages.push(messageObj);
+                this.written_message = '';
+            },
+
         }
     }
 );

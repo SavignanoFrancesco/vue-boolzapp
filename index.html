@@ -97,14 +97,10 @@
                                     <span>{{message.message}}</span>
                                     <span class="hour">{{message.hour.substring(0,5)}}</span>
                                 </div>
-                                <!-- <div class="message received">
-                                    <span>{{contacts[0].messages[2].message}}</span>
-                                    <span class="hour">17:15</span>
-                                </div> -->
                             </div>
                             <footer class="writemessage-box">
                                 <i class="far fa-smile"></i>
-                                <input type="text" name="" value="" placeholder="Scrivi messaggio">
+                                <input v-model="written_message" @keyup.enter="addMessage" type="text" name="" value="" placeholder="Scrivi messaggio">
                                 <i class="fas fa-microphone"></i>
                             </footer>
 
