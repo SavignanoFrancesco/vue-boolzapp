@@ -312,6 +312,7 @@ i.menu-icon{
 
 .message-menu{
     position: absolute;
+    width: 100px;
     right: 0px;
     top: 20px;
     z-index: 1;
