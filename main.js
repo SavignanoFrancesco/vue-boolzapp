@@ -227,8 +227,9 @@ var app = new Vue(
             },
             contactFilter(name){
 
-                console.log(this.contact_search);
-                let verify_contact = name.startsWith(this.contact_search);
+                let contactCapitalized = this.contact_search.charAt(0).toUpperCase() + this.contact_search.slice(1);
+
+                let verify_contact = name.startsWith(contactCapitalized);
                 return verify_contact;
 
             },
