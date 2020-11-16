@@ -266,7 +266,7 @@ var app = new Vue(
 
                     this.contacts[this.chosen_contact_index].messages[index].clicked = false;
                 }
-                // console.log(this.contacts[this.chosen_contact_index].messages[index].clicked);
+
             },
             hideAllDropdownMenus(){
 
@@ -279,6 +279,9 @@ var app = new Vue(
             },
             deleteMessage(index){
                 this.contacts[this.chosen_contact_index].messages.splice(index,1);
+            },
+            getLastMessageIndex(index){
+                return (this.contacts[index].messages).length -1;
             },
 
         },

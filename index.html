@@ -60,11 +60,11 @@
                                                 <img :src="getImgUrl(contact)"  alt="">
                                                 <div class="contact-name-and-status">
                                                     <span>{{contact.name}}</span>
-                                                    <span>Status</span>
+                                                    <span>{{contact.messages[getLastMessageIndex(index)].message}}</span>
                                                 </div>
                                             </div>
                                             <div class="contact-right">
-                                                <span>15:27</span>
+                                                <span>{{contact.messages[getLastMessageIndex(index)].hour.substring(0,5)}}</span>
                                             </div>
                                         </li>
                                     </ul>

@@ -222,6 +222,10 @@ i{
     color: rgb(0,0,0,0.4);
 }
 
+.contact-right span{
+    margin-right: 3px;
+}
+
 .chat-header{
     height: 10%;
     display: flex;
