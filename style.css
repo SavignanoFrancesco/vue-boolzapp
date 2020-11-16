@@ -187,6 +187,9 @@ i{
     align-items: center;
     justify-content: space-between;
 }
+.contact-list li.active{
+    background: whitesmoke;
+}
 
 .contact-list img{
     height: 45px;
@@ -286,6 +289,21 @@ i{
     border-radius: 5px;
     font-size: 14px;
     margin-top: 5px;
+    position: relative;
+}
+
+.message-menu{
+    position: absolute;
+    width: 80px;
+    height: 50px;
+    right: 10px;
+    top: 5px;
+    z-index: 100;
+    background-color: lightgrey;
+    display:none;
+}
+.message-menu.active{
+    display: block;
 }
 
 .message span{
