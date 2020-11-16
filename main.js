@@ -12,19 +12,22 @@ var app = new Vue(
                         date: '10/01/2020',
                         hour: '15:30:55',
                         message: 'Hai portato a spasso il cane?',
-                        status: 'sent'
+                        status: 'sent',
+                        clicked: false
                         },
                         {
                         date: '10/01/2020',
                         hour: '15:50:00',
                         message: 'Ricordati di dargli da mangiare',
-                        status: 'sent'
+                        status: 'sent',
+                        clicked: false
                         },
                         {
                         date: '10/01/2020',
                         hour: '16:15:22',
                         message: 'Tutto fatto!',
-                        status: 'received'
+                        status: 'received',
+                        clicked: false
                         }
                     ],
                 },
@@ -37,19 +40,22 @@ var app = new Vue(
                             date: '20/03/2020',
                             hour: '16:30:00',
                             message: 'Ciao come stai?',
-                            status: 'sent'
+                            status: 'sent',
+                            clicked: false
                         },
                         {
                             date: '20/03/2020',
                             hour: '16:30:55',
                             message: 'Bene grazie! Stasera ci vediamo?',
-                            status: 'received'
+                            status: 'received',
+                            clicked: false
                         },
                         {
                             date: '20/03/2020',
                             hour: '16:35:00',
                             message: 'Mi piacerebbe ma devo andare a fare la spesa',
-                            status: 'received'
+                            status: 'received',
+                            clicked: false
                         }
                     ],
                 },
@@ -62,19 +68,22 @@ var app = new Vue(
                         date: '28/03/2020',
                         hour: '10:10:40',
                         message: 'La Marianna va in campagna',
-                        status: 'received'
+                        status: 'received',
+                        clicked: false
                         },
                         {
                         date: '28/03/2020',
                         hour: '10:20:10',
                         message: 'Sicuro di non aver sbagliato chat?',
-                        status: 'sent'
+                        status: 'sent',
+                        clicked: false
                         },
                         {
                         date: '28/03/2020',
                         hour: '16:15:22',
                         message: 'Ah scusa!',
-                        status: 'received'
+                        status: 'received',
+                        clicked: false
                         }
                     ],
                 },
@@ -87,13 +96,15 @@ var app = new Vue(
                             date: '10/01/2020',
                             hour: '15:30:55',
                             message: 'Lo sai che ha aperto una nuova pizzeria?',
-                            status: 'sent'
+                            status: 'sent',
+                            clicked: false
                         },
                         {
                             date: '10/01/2020',
                             hour: '15:50:00',
                             message: 'Si, ma preferirei andare al cinema',
-                            status: 'received'
+                            status: 'received',
+                            clicked: false
                         }
                     ],
                 },
@@ -106,13 +117,15 @@ var app = new Vue(
                             date: '10/10/2020',
                             hour: '15:00:55',
                             message: 'Ti ricordi di me?',
-                            status: 'sent'
+                            status: 'sent',
+                            clicked: false
                         },
                         {
                             date: '10/10/2020',
                             hour: '15:50:00',
                             message: 'Certo che si!',
-                            status: 'received'
+                            status: 'received',
+                            clicked: false
                         }
                     ],
                 },
@@ -125,13 +138,15 @@ var app = new Vue(
                             date: '11/02/2020',
                             hour: '13:25:55',
                             message: 'Come va?',
-                            status: 'sent'
+                            status: 'sent',
+                            clicked: false
                         },
                         {
                             date: '11/02/2020',
                             hour: '15:00:00',
                             message: 'Bene tu?',
-                            status: 'received'
+                            status: 'received',
+                            clicked: false
                         }
                     ],
                 },
@@ -144,13 +159,15 @@ var app = new Vue(
                             date: '14/03/2020',
                             hour: '12:30:55',
                             message: 'Che film mi consigli?',
-                            status: 'sent'
+                            status: 'sent',
+                            clicked: false
                         },
                         {
                             date: '14/03/2020',
                             hour: '12:50:00',
                             message: 'Il signore degli anelli',
-                            status: 'received'
+                            status: 'received',
+                            clicked: false
                         }
                     ],
                 },
@@ -163,13 +180,15 @@ var app = new Vue(
                             date: '15/03/2020',
                             hour: '15:30:55',
                             message: 'Ciao',
-                            status: 'sent'
+                            status: 'sent',
+                            clicked: false
                         },
                         {
                             date: '15/03/2020',
                             hour: '15:50:00',
                             message: 'Ciao',
-                            status: 'received'
+                            status: 'received',
+                            clicked: false
                         }
                     ],
                 },
@@ -177,6 +196,7 @@ var app = new Vue(
             chosen_contact_index: 0,
             written_message: '',
             contact_search: '',
+            clicked_index : 0,
         },
         methods: {
             getImgUrl(contact) {
@@ -205,6 +225,7 @@ var app = new Vue(
                     hour: hour + ':' + minutes ,
                     message: this.written_message,
                     status: 'sent',
+                    clicked: false,
                 };
 
                 if (this.written_message != '') {
@@ -215,6 +236,7 @@ var app = new Vue(
                         hour: hour + ':' + minutes ,
                         message:'ok',
                         status: 'received',
+                        clicked: false,
                     };
 
                     setTimeout(() => { this.contacts[this.chosen_contact_index].messages.push(answerObj);
@@ -231,6 +253,22 @@ var app = new Vue(
 
                 let verify_contact = name.startsWith(contactCapitalized);
                 return verify_contact;
+
+            },
+            clickedFlag(index){
+
+                clicked_index = index;
+
+                if (this.contacts[this.chosen_contact_index].messages[index].clicked == false) {
+
+                    this.contacts[this.chosen_contact_index].messages[index].clicked = true;
+                }else{
+
+                    this.contacts[this.chosen_contact_index].messages[index].clicked = false;
+                }
+                console.log(this.contacts[this.chosen_contact_index].messages[index].clicked);
+
+
 
             },
 
