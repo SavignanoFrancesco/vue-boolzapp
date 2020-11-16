@@ -281,7 +281,11 @@ var app = new Vue(
 
             },
             deleteMessage(index){
-                this.contacts[this.chosen_contact_index].messages.splice(index,1);
+                if (this.contacts[this.chosen_contact_index].messages.length > 1) {
+                    this.contacts[this.chosen_contact_index].messages.splice(index,1);
+                }else {
+                    alert('non so ancora come cancellare l\'ultimo messaggio');
+                }
             },
             getLastMessageIndex(index){
                 return (this.contacts[index].messages).length -1;
