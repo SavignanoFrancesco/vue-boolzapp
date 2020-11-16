@@ -54,8 +54,8 @@
                                 </div>
 
                                 <div class="contact-list">
-                                    <ul>
-                                        <li v-for="(contact, index) in contacts" @click="getContactIndex(contact)" :class="index == chosen_contact_index ? 'active' : ''" v-if="contactFilter(contact.name)">
+                                    <ul @click="hideAllDropdownMenus()">
+                                        <li v-for="(contact, index) in contacts" @click="getContactIndex(contact)"  :class="index == chosen_contact_index ? 'active' : ''" v-if="contactFilter(contact.name)">
                                             <div class="contact-left">
                                                 <img :src="getImgUrl(contact)"  alt="">
                                                 <div class="contact-name-and-status">

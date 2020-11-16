@@ -266,9 +266,16 @@ var app = new Vue(
 
                     this.contacts[this.chosen_contact_index].messages[index].clicked = false;
                 }
-                console.log(this.contacts[this.chosen_contact_index].messages[index].clicked);
+                // console.log(this.contacts[this.chosen_contact_index].messages[index].clicked);
+            },
+            hideAllDropdownMenus(){
 
-
+                for (let i = 0; i < this.contacts.length; i++) {
+                    for (let j = 0; j < this.contacts[i].messages.length; j++) {
+                        this.contacts[i].messages[j].clicked = false;
+                        console.log(this.contacts[i].messages[j].clicked);
+                    }
+                }
 
             },
 
