@@ -81,7 +81,9 @@
                                         <img :src="getChosenImgUrl(contacts[chosen_contact_index])"  alt="">
                                         <div class="contact-name-and-lastacces">
                                             <span>{{contacts[chosen_contact_index].name}}</span>
-                                            <span>last access</span>
+                                            <span>Last message received  {{contacts[chosen_contact_index].messages[getLastReceivedMessageIndex(chosen_contact_index)].date}}
+                                            {{contacts[chosen_contact_index].messages[getLastReceivedMessageIndex(chosen_contact_index)].hour.substring(0,5)}} </span>
+
                                         </div>
                                     </div>
                                 </div>

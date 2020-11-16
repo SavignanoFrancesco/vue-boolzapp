@@ -219,9 +219,12 @@ var app = new Vue(
                 let date = new Date();
                 let hour = date.getHours();
                 let minutes = date.getMinutes();
+                let day = date.getDay();
+                let month = date.getMonth();
+                let year = date.getFullYear();
 
                 let messageObj = {
-                    date: '',
+                    date: '0' + day + '/' + (month + 1) + '/' + year,
                     hour: hour + ':' + minutes ,
                     message: this.written_message,
                     status: 'sent',
@@ -232,7 +235,7 @@ var app = new Vue(
                     this.contacts[this.chosen_contact_index].messages.push(messageObj);
 
                     let answerObj = {
-                        date: '',
+                        date: '0' + day + '/' + (month + 1) + '/' + year,
                         hour: hour + ':' + minutes ,
                         message:'ok',
                         status: 'received',
@@ -282,6 +285,18 @@ var app = new Vue(
             },
             getLastMessageIndex(index){
                 return (this.contacts[index].messages).length -1;
+            },
+            getLastReceivedMessageIndex(index){
+
+                let last_received_message_index = 0;
+
+                for (var k = 0; k < this.contacts[index].messages.length; k++) {
+                    if(this.contacts[index].messages[k].status == 'received'){
+                        last_received_message_index = k;
+                    }
+                }
+
+                return last_received_message_index;
             },
 
         },
