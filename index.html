@@ -94,6 +94,7 @@
                             </header>
                             <div class="chat-messages">
                                 <div class="message" v-for="message in contacts[chosen_contact_index].messages" :class="message.status == 'sent' ? 'sent' : 'received'">
+                                    <i class="fas fa-angle-down menu-icon"></i>
                                     <div class="message-menu">
 
                                     </div>

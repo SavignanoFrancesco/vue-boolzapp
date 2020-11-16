@@ -282,7 +282,7 @@ i{
 }
 
 .message{
-    height: 30px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -290,6 +290,20 @@ i{
     font-size: 14px;
     margin-top: 5px;
     position: relative;
+}
+
+.message:hover i.menu-icon{
+    display: block;
+}
+
+i.menu-icon{
+    font-size: 18px;
+    position: absolute;
+    transform: translate(-50%,0);
+    top: 3px;
+    right: 3px;
+    color: rgba(0,0,0,0.3);
+    display: none;
 }
 
 .message-menu{
