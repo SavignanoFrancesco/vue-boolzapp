@@ -4,7 +4,7 @@ var app = new Vue(
         data: {
             contacts: [
                 {
-                    name: 'Michele',
+                    name: 'Matteo',
                     avatar: '_2',
                     visible: true,
                     messages:   [
@@ -29,7 +29,7 @@ var app = new Vue(
                     ],
                 },
                 {
-                    name: 'Fabio',
+                    name: 'Marco',
                     avatar: '_3',
                     visible: true,
                     messages: [
@@ -54,7 +54,7 @@ var app = new Vue(
                     ],
                 },
                 {
-                    name: 'Luisa',
+                    name: 'Annalisa',
                     avatar: '_4',
                     visible: true,
                     messages: [
@@ -117,7 +117,7 @@ var app = new Vue(
                     ],
                 },
                 {
-                    name: 'Valeria',
+                    name: 'Martina',
                     avatar: '_7',
                     visible: true,
                     messages: [
@@ -176,6 +176,7 @@ var app = new Vue(
             ],
             chosen_contact_index: 0,
             written_message: '',
+            contact_search: '',
         },
         methods: {
             getImgUrl(contact) {
@@ -194,7 +195,7 @@ var app = new Vue(
                 this.chosen_contact_index = contactIndex;
             },
             addMessage(){
-                
+
                 let date = new Date();
                 let hour = date.getHours();
                 let minutes = date.getMinutes();
@@ -222,6 +223,13 @@ var app = new Vue(
                 }
 
                 this.written_message = '';
+
+            },
+            contactFilter(name){
+
+                console.log(this.contact_search);
+                let verify_contact = name.startsWith(this.contact_search);
+                return verify_contact;
 
             },
 
