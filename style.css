@@ -308,13 +308,25 @@ i.menu-icon{
 
 .message-menu{
     position: absolute;
-    width: 80px;
-    height: 50px;
     right: 0px;
     top: 20px;
     z-index: 1;
     opacity: 95%;
-    background-color: lightgrey;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 24px 5px rgba(0,0,0,0.55);
+}
+
+.info,.delete-message{
+    padding: 10px 5px;
+}
+
+.delete-message:hover{
+    background-color: whitesmoke;
+    cursor: pointer;
 }
 
 .message-menu.hidden{

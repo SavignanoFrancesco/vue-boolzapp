@@ -273,10 +273,12 @@ var app = new Vue(
                 for (let i = 0; i < this.contacts.length; i++) {
                     for (let j = 0; j < this.contacts[i].messages.length; j++) {
                         this.contacts[i].messages[j].clicked = false;
-                        console.log(this.contacts[i].messages[j].clicked);
                     }
                 }
 
+            },
+            deleteMessage(index){
+                this.contacts[this.chosen_contact_index].messages.splice(index,1);
             },
 
         },
