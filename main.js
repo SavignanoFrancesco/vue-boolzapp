@@ -254,9 +254,10 @@ var app = new Vue(
             },
             contactFilter(name){
 
-                let contactCapitalized = this.contact_search.charAt(0).toUpperCase() + this.contact_search.slice(1);
+                let lowercase_contact_search = this.contact_search.toLowerCase();
+                let lowercase_name = name.toLowerCase();
 
-                let verify_contact = name.startsWith(contactCapitalized);
+                let verify_contact = lowercase_name.startsWith(lowercase_contact_search);
                 return verify_contact;
 
             },
