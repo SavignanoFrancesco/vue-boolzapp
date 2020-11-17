@@ -295,6 +295,7 @@ var app = new Vue(
                     Vue.set(this.contacts[this.chosen_contact_index].messages[index], 'hour', '');
                     Vue.set(this.contacts[this.chosen_contact_index].messages[index], 'date', '');
                 }
+                // console.log(this.contacts[this.chosen_contact_index].messages[index]);
             },
             getLastMessageIndex(index){
                 return (this.contacts[index].messages).length -1;

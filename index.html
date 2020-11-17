@@ -81,8 +81,9 @@
                                         <img :src="getChosenImgUrl(contacts[chosen_contact_index])"  alt="">
                                         <div class="contact-name-and-lastacces">
                                             <span>{{contacts[chosen_contact_index].name}}</span>
-                                            <span>Last message  {{contacts[chosen_contact_index].messages[getLastMessageIndex(chosen_contact_index)].date}}
+                                            <span v-if="contacts[chosen_contact_index].messages[getLastMessageIndex(chosen_contact_index)].status != 'no_messages'">Last message  {{contacts[chosen_contact_index].messages[getLastMessageIndex(chosen_contact_index)].date}}
                                             {{contacts[chosen_contact_index].messages[getLastMessageIndex(chosen_contact_index)].hour.substring(0,5)}} </span>
+                                            <span v-if="contacts[chosen_contact_index].messages[getLastMessageIndex(chosen_contact_index)].status == 'no_messages'">No messages found...</span>
 
                                         </div>
                                     </div>
