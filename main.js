@@ -288,18 +288,32 @@ var app = new Vue(
                 if (this.contacts[this.chosen_contact_index].messages.length > 1) {
                     this.contacts[this.chosen_contact_index].messages.splice(index,1);
                 }else {
-                    alert('non so ancora come cancellare l\'ultimo messaggio');
+
+                    Vue.set(this.contacts[this.chosen_contact_index].messages[index], 'status', 'no_messages');
+                    Vue.set(this.contacts[this.chosen_contact_index].messages[index], 'message', 'No messages');
+                    Vue.set(this.contacts[this.chosen_contact_index].messages[index], 'clicked', false);
+                    Vue.set(this.contacts[this.chosen_contact_index].messages[index], 'hour', '');
+                    Vue.set(this.contacts[this.chosen_contact_index].messages[index], 'date', '');
                 }
             },
             getLastMessageIndex(index){
                 return (this.contacts[index].messages).length -1;
+            },
+            getTypeOfMessage(message_info,index){
+                if (message_info.status == 'sent') {
+                    return 'sent';
+                }else if (message_info.status == 'received') {
+                    return 'received';
+                }else if (message_info.status == 'no_messages') {
+                    return 'no_messages';
+                }
             },
 
         },
         mounted(){
              for (let i = 0; i < this.contacts.length; i++) {
                   this.contacts[i].messages.forEach((item, i) => {
-                    Vue.set(item, 'clicked', false)
+                    Vue.set(item, 'clicked', false);
 
                   });
             }

@@ -362,6 +362,10 @@ i.menu-icon{
     margin-left: 10%;
 }
 
+.message.no_messages{
+ display: none;
+}
+
 .writemessage-box{
     height: 10%;
     display: flex;
