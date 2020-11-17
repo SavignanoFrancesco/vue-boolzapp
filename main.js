@@ -196,7 +196,6 @@ var app = new Vue(
             chosen_contact_index: 0,
             written_message: '',
             contact_search: '',
-            clicked_index : 0,
         },
         methods: {
             getImgUrl(contact) {
@@ -259,8 +258,7 @@ var app = new Vue(
 
             },
             clickedFlag(index){
-
-                clicked_index = index;
+;
 
                 if (this.contacts[this.chosen_contact_index].messages[index].clicked == false) {
 
@@ -289,18 +287,6 @@ var app = new Vue(
             },
             getLastMessageIndex(index){
                 return (this.contacts[index].messages).length -1;
-            },
-            getLastMessageIndex(index){
-
-                let last_message_index = 0;
-
-                for (var k = 0; k < this.contacts[index].messages.length; k++) {
-
-                        last_message_index = k;
-
-                }
-
-                return last_message_index;
             },
 
         },
