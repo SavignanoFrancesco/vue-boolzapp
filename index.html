@@ -9,13 +9,20 @@
     </head>
     <body>
 
+        <!-- CONTENITORE GESTITO DA VUE -->
         <div id="root">
 
+            <!-- CONTENITORE PER LO SFONDO IN BACKGROUND -->
             <div class="external-container">
                 <div class="external-container-layer">
+
+                    <!-- CONTENITORE DI TUTTE LE SEZIONI DELL'APPLICAZIONE -->
                     <div class="container">
 
+                        <!-- SEZIONE DI SINISTRA -->
                         <div class="left-box">
+
+                            <!-- ___________________________________________ -->
                             <header class="user-header">
 
                                 <div class="user-avatar">
@@ -29,7 +36,9 @@
                                 </div>
 
                             </header>
+                            <!-- ___________________________________________ -->
 
+                            <!-- ___________________________________________ -->
                             <div class="user-notifications">
                                 <div class="notification-bell">
                                     <i class="fas fa-bell-slash"></i>
@@ -39,7 +48,9 @@
                                     <p class="bottom-p"><a href="#">Attiva notifiche desktop</a></p>
                                 </div>
                             </div>
+                            <!-- ___________________________________________ -->
 
+                            <!-- ___________________________________________ -->
                             <div class="contacts-box">
 
                                 <div class="search-box">
@@ -50,7 +61,6 @@
                                     <div class="search-input">
                                         <input v-model="contact_search" type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
                                     </div>
-
                                 </div>
 
                                 <div class="contact-list">
@@ -71,10 +81,15 @@
                                 </div>
 
                             </div>
+                            <!-- ___________________________________________ -->
 
                         </div>
+                        <!-- ___________FINE_SEZIONE_DI_SINISTRA____________ -->
 
+                        <!-- SEZIONE DI DESTRA -->
                         <div class="chat-box">
+
+                            <!-- ___________________________________________ -->
                             <header class="chat-header">
                                 <div class="chat-avatar">
                                     <div class="contact-left">
@@ -84,7 +99,6 @@
                                             <span v-if="contacts[chosen_contact_index].messages[getLastMessageIndex(chosen_contact_index)].status != 'no_messages'">Last message  {{contacts[chosen_contact_index].messages[getLastMessageIndex(chosen_contact_index)].date}}
                                             {{contacts[chosen_contact_index].messages[getLastMessageIndex(chosen_contact_index)].hour.substring(0,5)}} </span>
                                             <span v-if="contacts[chosen_contact_index].messages[getLastMessageIndex(chosen_contact_index)].status == 'no_messages'">No messages found...</span>
-
                                         </div>
                                     </div>
                                 </div>
@@ -95,6 +109,9 @@
                                     <i class="fas fa-ellipsis-v"></i>
                                 </div>
                             </header>
+                            <!-- ___________________________________________ -->
+
+                            <!-- ___________________________________________ -->
                             <div class="chat-messages">
                                 <div class="message" v-for="(message_info,index) in contacts[chosen_contact_index].messages" :class="message_info.status">
                                     <i v-if="message_info.status != 'no_messages'" @click="clickToggle(message_info,index)" class="fas fa-angle-down menu-icon"></i>
@@ -112,21 +129,28 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- ___________________________________________ -->
+
+                            <!-- ___________________________________________ -->
                             <footer class="writemessage-box">
                                 <i class="far fa-smile"></i>
                                 <input v-model="written_message" @keyup.enter="addMessage" type="text" name="" value="" placeholder="Scrivi messaggio">
                                 <i class="fas fa-microphone"></i>
                             </footer>
+                            <!-- ___________________________________________ -->
 
                         </div>
-
+                        <!-- ___________FINE_SEZIONE_DI_DESTRA____________ -->
 
                     </div>
+                    <!-- FINE CONTENITORE -->
+
                 </div>
             </div>
-
+            <!-- FINE CONTENITORE DELLO SFONDO -->
 
         </div>
+        <!-- FINE CONTENITORE GESTITO DA VUE -->
 
         <script src="main.js" charset="utf-8"></script>
     </body>
