@@ -259,27 +259,20 @@ var app = new Vue(
             },
             clickToggle(message_info,index){
 
-                console.log('index: ' + index);
-                // for (let i = 0; i < this.contacts.length; i++) {
-                //      this.contacts[i].messages.forEach((item, i) => {
-                //          item.clicked = false;
-                //
-                //      });
-                // }
-
 
                 if (message_info.clicked == false) {
 
-
-                message_info.clicked = true;
+                Vue.set(message_info, 'clicked', true);
+                // message_info.clicked = true;
 
                 }else{
 
-                message_info.clicked = false;
+                Vue.set(message_info, 'clicked', false);
+                // message_info.clicked = false;
 
                 }
 
-                console.log(this.contacts[this.chosen_contact_index]);
+                // console.log(this.contacts[this.chosen_contact_index]);
 
             },
             hideAllDropdownMenus(){
@@ -303,10 +296,10 @@ var app = new Vue(
             },
 
         },
-        created(){
+        mounted(){
              for (let i = 0; i < this.contacts.length; i++) {
                   this.contacts[i].messages.forEach((item, i) => {
-                     item.clicked = false;
+                    Vue.set(item, 'clicked', false)
 
                   });
             }
