@@ -232,6 +232,7 @@ var app = new Vue(
 
                 if (this.written_message != '') {
                     this.contacts[this.chosen_contact_index].messages.push(messageObj);
+                    this.autoScrollToBottom();
 
                     let answerObj = {
                         date: day + '/' + (month + 1) + '/' + year,
@@ -241,7 +242,9 @@ var app = new Vue(
                         // clicked: false,
                     };
 
-                    setTimeout(() => { this.contacts[this.chosen_contact_index].messages.push(answerObj);
+                    setTimeout(() => {
+                         this.contacts[this.chosen_contact_index].messages.push(answerObj);
+                         this.autoScrollToBottom()
                     }, 1500);
 
                 }
@@ -300,18 +303,16 @@ var app = new Vue(
             getLastMessageIndex(index){
                 return (this.contacts[index].messages).length -1;
             },
-            getTypeOfMessage(message_info,index){
-                if (message_info.status == 'sent') {
-                    return 'sent';
-                }else if (message_info.status == 'received') {
-                    return 'received';
-                }else if (message_info.status == 'no_messages') {
-                    return 'no_messages';
-                }
-            },
+            autoScrollToBottom(){
+                Vue.nextTick(function(){
+                    let chat_container = document.getElementsByClassName("chat-messages")[0];
+                    chat_container.scrollTop = chat_container.scrollHeight;
+                });
+            }
+
 
         },
-        mounted(){
+        created(){
              for (let i = 0; i < this.contacts.length; i++) {
                   this.contacts[i].messages.forEach((item, i) => {
                     Vue.set(item, 'clicked', false);
