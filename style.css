@@ -1,3 +1,4 @@
+/* STILE GENERALE */
 *{
     padding: 0;
     margin: 0;
@@ -12,6 +13,7 @@ i{
     cursor: pointer;sent
 }
 
+/* SFONDO */
 .external-container{
     width: 100%;
     height: 100vh;
@@ -27,6 +29,7 @@ i{
     align-items: center;
 }
 
+/* CONTENITORE APPLICAZIONE */
 .container{
     width: 85%;
     height: 90%;
@@ -34,6 +37,7 @@ i{
     display: flex;
 }
 
+/* SEZIONE DI DINISTRA */
 .left-box{
     width: 30%;
     height: 100%;
@@ -46,15 +50,7 @@ i{
     cursor: pointer;
 }
 
-.chat-box{
-    width: 70%;
-    height: 100%;
-    display: flex;
-    flex-grow: 10;
-    flex-direction: column;
-    /* background: blue; */
-}
-
+/* _________HEADER_SINISTRA_________ */
 .user-header{
     height: 10%;
     display: flex;
@@ -88,6 +84,7 @@ i{
     color:grey;
 }
 
+ /* _________BOX_ATTIVAZIONE_NOTIFICHE_________*/
 .user-notifications{
     height: 10%;
     display: flex;
@@ -130,6 +127,7 @@ i{
 
 }
 
+/* ___________BOX_RICERCA_CONTATTI____________ */
 .contacts-box{
     width: 100%;
     height: 80%;
@@ -226,6 +224,16 @@ i{
     margin-right: 3px;
 }
 
+/* SEZIONE DI DESTRA */
+.chat-box{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-grow: 10;
+    flex-direction: column;
+}
+
+/* _________HEADER_DESTRA_________ */
 .chat-header{
     height: 10%;
     display: flex;
@@ -269,6 +277,7 @@ i{
     color: rgba(0,0,0,0.4);
 }
 
+ /*______________CHAT_MESSAGES_____________ */
 .chat-messages{
     overflow-y: scroll;
     height: 80%;
@@ -378,6 +387,7 @@ i.menu-icon{
  display: none;
 }
 
+/* __________INPUT_MANDA_MESSAGGIO____________ */
 .writemessage-box{
     height: 10%;
     display: flex;

@@ -22,7 +22,7 @@
                         <!-- SEZIONE DI SINISTRA -->
                         <div class="left-box">
 
-                            <!-- ___________________________________________ -->
+                            <!-- _________HEADER_SINISTRA_________ -->
                             <header class="user-header">
 
                                 <div class="user-avatar">
@@ -36,9 +36,9 @@
                                 </div>
 
                             </header>
-                            <!-- ___________________________________________ -->
+                            <!-- ___________________________________________-->
 
-                            <!-- ___________________________________________ -->
+                            <!-- _________BOX_ATTIVAZIONE_NOTIFICHE_________-->
                             <div class="user-notifications">
                                 <div class="notification-bell">
                                     <i class="fas fa-bell-slash"></i>
@@ -48,9 +48,9 @@
                                     <p class="bottom-p"><a href="#">Attiva notifiche desktop</a></p>
                                 </div>
                             </div>
-                            <!-- ___________________________________________ -->
+                            <!-- ___________________________________________-->
 
-                            <!-- ___________________________________________ -->
+                            <!-- ___________BOX_RICERCA_CONTATTI____________-->
                             <div class="contacts-box">
 
                                 <div class="search-box">
@@ -89,7 +89,7 @@
                         <!-- SEZIONE DI DESTRA -->
                         <div class="chat-box">
 
-                            <!-- ___________________________________________ -->
+                            <!-- _________HEADER_DESTRA_________ -->
                             <header class="chat-header">
                                 <div class="chat-avatar">
                                     <div class="contact-left">
@@ -111,7 +111,7 @@
                             </header>
                             <!-- ___________________________________________ -->
 
-                            <!-- ___________________________________________ -->
+                            <!-- ______________CHAT_MESSAGES_____________ -->
                             <div class="chat-messages">
                                 <div class="message" v-for="(message_info,index) in contacts[chosen_contact_index].messages" :class="message_info.status">
                                     <i v-if="message_info.status != 'no_messages'" @click="clickToggle(message_info,index)" class="fas fa-angle-down menu-icon"></i>
@@ -131,7 +131,7 @@
                             </div>
                             <!-- ___________________________________________ -->
 
-                            <!-- ___________________________________________ -->
+                            <!-- __________INPUT_MANDA_MESSAGGIO____________ -->
                             <footer class="writemessage-box">
                                 <i class="far fa-smile"></i>
                                 <input v-model="written_message" @keyup.enter="addMessage" type="text" name="" value="" placeholder="Scrivi messaggio">
