@@ -135,7 +135,10 @@
                             <footer class="writemessage-box">
                                 <i class="far fa-smile"></i>
                                 <input v-model="written_message" @keyup.enter="addMessage" type="text" name="" value="" placeholder="Scrivi messaggio">
-                                <i class="fas fa-microphone"></i>
+                                <div class="send-message-icons">
+                                    <i class="fas fa-microphone" v-if="written_message == ''"></i>
+                                    <i class="fas fa-paper-plane" v-if="written_message != ''" @click="addMessage()"></i>
+                                </div>
                             </footer>
                             <!-- ___________________________________________ -->
 

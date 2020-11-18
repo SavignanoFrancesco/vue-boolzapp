@@ -395,14 +395,24 @@ i.menu-icon{
 
 .writemessage-box i{
     font-size: 25px;
-    margin: 0 20px;
+    margin: 0 25px;
     color:grey;
+    width: 5%;
 }
 
 .writemessage-box input{
-    width: 85%;
+    width: 90%;
     height: 50%;
     border: none;
     outline: none;
     border-radius: 5px;
+    padding-left: 5px;
+}
+
+.send-message-icons i{
+    margin: 0 35px;
+}
+
+.send-message-icons i.fas.fa-paper-plane{
+    margin-left: 27px;
 }
