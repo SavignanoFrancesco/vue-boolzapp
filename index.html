@@ -114,8 +114,8 @@
                             <!-- ______________CHAT_MESSAGES_____________ -->
                             <div class="chat-messages">
                                 <div class="message" v-for="(message_info,index) in contacts[chosen_contact_index].messages" :class="message_info.status">
-                                    <i v-if="message_info.status != 'no_messages'" @click="clickToggle(message_info,index)" class="fas fa-angle-down menu-icon"></i>
-                                    <div :class="message_info.clicked ? 'message-menu active' : 'message-menu hidden'">
+                                    <i v-if="message_info.status != 'no_messages'" @click="clickToggle(message_info,index)" @click="IndexOfThis(index)" class="fas fa-angle-down menu-icon"></i>
+                                    <div v-if="clicked_index == index" :class="clicked ? 'message-menu active' : 'message-menu hidden'">
                                         <div class="info">
                                             Message info
                                         </div>

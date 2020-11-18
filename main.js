@@ -196,6 +196,8 @@ var app = new Vue(
             chosen_contact_index: 0,
             written_message: '',
             contact_search: '',
+            clicked: false,
+            clicked_index: 0,
         },
         methods: {
             getImgUrl(contact) {
@@ -259,28 +261,42 @@ var app = new Vue(
             clickToggle(message_info,index){
 
 
-                if (message_info.clicked == false) {
 
-                Vue.set(message_info, 'clicked', true);
-                // message_info.clicked = true;
+                if (this.clicked == false) {
+
+                //Vue.set(message_info, 'clicked', true);
+
+                this.clicked = true;
 
                 }else{
 
-                Vue.set(message_info, 'clicked', false);
-                // message_info.clicked = false;
+                //Vue.set(message_info, 'clicked', false);
+                if(this.clicked_index == index){
+                    this.clicked = false;
+                }
+
 
                 }
 
+                this.clicked_index = index;
+                // console.log(this.clicked);
+                // console.log(index);
                 // console.log(this.contacts[this.chosen_contact_index]);
+
+            },
+            IndexOfThis(index){
+
+                this.clicked_index = index;
 
             },
             hideAllDropdownMenus(){
 
-                for (let i = 0; i < this.contacts.length; i++) {
-                    for (let j = 0; j < this.contacts[i].messages.length; j++) {
-                        this.contacts[i].messages[j].clicked = false;
-                    }
-                }
+                // for (let i = 0; i < this.contacts.length; i++) {
+                //     for (let j = 0; j < this.contacts[i].messages.length; j++) {
+                //         this.contacts[i].messages[j].clicked = false;
+                //     }
+                // }
+                this.clicked = false;
 
             },
             deleteMessage(index){
@@ -288,12 +304,22 @@ var app = new Vue(
                     this.contacts[this.chosen_contact_index].messages.splice(index,1);
                 }else {
 
+                    /*
                     Vue.set(this.contacts[this.chosen_contact_index].messages[index], 'status', 'no_messages');
                     Vue.set(this.contacts[this.chosen_contact_index].messages[index], 'message', 'No messages');
                     Vue.set(this.contacts[this.chosen_contact_index].messages[index], 'clicked', false);
                     Vue.set(this.contacts[this.chosen_contact_index].messages[index], 'hour', '');
                     Vue.set(this.contacts[this.chosen_contact_index].messages[index], 'date', '');
+                    */
+
+                    this.contacts[this.chosen_contact_index].messages[index].status = 'no_messages';
+                    this.contacts[this.chosen_contact_index].messages[index].message = 'No messages';
+                    // this.contacts[this.chosen_contact_index].messages[index].clicked = false;
+                    this.contacts[this.chosen_contact_index].messages[index].hour = '';
+                    this.contacts[this.chosen_contact_index].messages[index].date = '';
                 }
+
+                this.clicked = false;
                 // console.log(this.contacts[this.chosen_contact_index].messages[index]);
             },
             getLastMessageIndex(index){
@@ -309,12 +335,15 @@ var app = new Vue(
 
         },
         created(){
-             for (let i = 0; i < this.contacts.length; i++) {
-                  this.contacts[i].messages.forEach((item, i) => {
-                    Vue.set(item, 'clicked', false);
 
-                  });
-            }
+            // for (let i = 0; i < this.contacts.length; i++) {
+            //       this.contacts[i].messages.forEach((item, i) => {
+            //         //item.clicked = false;
+            //
+            //         Vue.set(item, 'clicked', false);
+            //
+            //       });
+            // }
 
         },
 
