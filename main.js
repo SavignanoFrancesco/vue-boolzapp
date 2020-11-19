@@ -231,7 +231,7 @@ var app = new Vue(
                     messageObj.hour = hour + ':0' + minutes;
                 }
 
-                if (this.written_message != '') {
+                if (this.written_message.trim() != '') {
                     this.contacts[this.chosen_contact_index].messages.push(messageObj);
                     this.autoScrollToBottom();
 
