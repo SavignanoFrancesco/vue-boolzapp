@@ -219,13 +219,17 @@ var app = new Vue(
                 let month = date.getMonth();
                 let year = date.getFullYear();
 
+
                 let messageObj = {
                     date: day + '/' + (month + 1) + '/' + year,
                     hour: hour + ':' + minutes ,
                     message: this.written_message,
                     status: 'sent',
-                    // clicked: false,
                 };
+
+                if (minutes < 10) {
+                    messageObj.hour = hour + ':0' + minutes;
+                }
 
                 if (this.written_message != '') {
                     this.contacts[this.chosen_contact_index].messages.push(messageObj);
@@ -236,7 +240,6 @@ var app = new Vue(
                         hour: hour + ':' + minutes ,
                         message:'ok',
                         status: 'received',
-                        // clicked: false,
                     };
 
                     setTimeout(() => {
